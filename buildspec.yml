@@ -12,8 +12,11 @@ phases:
       - echo "Starting training pipeline..."
 
   build:
-    commands:
-      - jupyter nbconvert --to notebook --execute train/train_validate.ipynb --output train/train_validate_output.ipynb
+  commands:
+    - jupyter kernelspec list  # shows available kernels
+    - jupyter nbconvert --to notebook --execute train/train_validate.ipynb 
+      --output train/train_validate_output.ipynb
+      --ExecutePreprocessor.kernel_name=python3
 
   post_build:
     commands:
