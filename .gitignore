@@ -1,1 +1,7 @@
 .venv/
+
+# Large data files — stored in S3, not git
+mlops/data/emails.csv
+mlops/data/messages.csv
+mlops/data/SMSSpamCollection
+mlops/data/*.csv
