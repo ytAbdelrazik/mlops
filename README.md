@@ -10,7 +10,7 @@ SMS/Enron/Lingspam Data
         ↓
     Amazon S3
         ↓
-SageMaker Notebook (Naive Bayes + TF-IDF)
+SageMaker Notebook (Naive Bayes)
         ↓
     Model → S3
         ↓
