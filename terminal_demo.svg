@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" viewBox="0 0 820 680">
+  <defs>
+    <style>
+      .mono { font-family: 'Courier New', Courier, monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="680" fill="#f0f0f0"/>
+
+  <!-- Terminal window -->
+  <rect x="20" y="20" width="780" height="640" rx="12" fill="#1a1a1a"/>
+
+  <!-- Title bar -->
+  <rect x="20" y="20" width="780" height="36" rx="12" fill="#2a2a2a"/>
+  <rect x="20" y="44" width="780" height="12" fill="#2a2a2a"/>
+
+  <!-- Traffic lights -->
+  <circle cx="44" cy="38" r="6" fill="#ff5f57"/>
+  <circle cx="64" cy="38" r="6" fill="#febc2e"/>
+  <circle cx="84" cy="38" r="6" fill="#28c840"/>
+
+  <!-- Title -->
+  <text x="110" y="43" class="sans" font-size="12" fill="#888">spam-classifier-api — curl</text>
+
+  <!-- ── Request 1: Ham ── -->
+  <text x="44" y="84" class="mono" font-size="12" fill="#888">youssefabdelrazik@YT-2 ~ %</text>
+  <text x="44" y="102" class="mono" font-size="12" fill="#7ec8e3">curl -X POST https://XXXXXXXXX.execute-api.us-east-1.amazonaws.com/dev/predict \</text>
+  <text x="60" y="118" class="mono" font-size="12" fill="#7ec8e3">-H <tspan fill="#f9c74f">'Content-Type: application/json'</tspan> \</text>
+  <text x="60" y="134" class="mono" font-size="12" fill="#7ec8e3">-d <tspan fill="#f9c74f">'{"text": "Hi there its michel jackson"}'</tspan></text>
+  <!-- Response 1 -->
+  <rect x="44" y="142" width="732" height="36" rx="6" fill="#222"/>
+  <text x="58" y="158" class="mono" font-size="12" fill="#aaa">{ <tspan fill="#79d5b3">"prediction"</tspan><tspan fill="#aaa">: </tspan><tspan fill="#f9c74f">"ham"</tspan><tspan fill="#aaa">,  </tspan><tspan fill="#79d5b3">"confidence"</tspan><tspan fill="#aaa">: </tspan><tspan fill="#98d5a3">0.9487</tspan><tspan fill="#aaa">,  </tspan><tspan fill="#79d5b3">"is_spam"</tspan><tspan fill="#aaa">: </tspan><tspan fill="#6ab0f5">false</tspan><tspan fill="#aaa"> }</tspan></text>
+
+  <!-- ── Section divider: Before drift ── -->
+  <rect x="44" y="194" width="3" height="120" fill="#444"/>
+  <text x="56" y="210" class="sans" font-size="11" fill="#f9c74f">Before drift detection — model v1 (trained on SMS only)</text>
+  <text x="56" y="230" class="mono" font-size="12" fill="#888">youssefabdelrazik@YT-2 ~ %</text>
+  <text x="56" y="248" class="mono" font-size="12" fill="#7ec8e3">curl -X POST https://XXXXXXXXX.execute-api.us-east-1.amazonaws.com/dev/predict \</text>
+  <text x="72" y="264" class="mono" font-size="12" fill="#7ec8e3">-H <tspan fill="#f9c74f">'Content-Type: application/json'</tspan> \</text>
+  <text x="72" y="280" class="mono" font-size="12" fill="#7ec8e3">-d <tspan fill="#f9c74f">'{"text": "Free prize click now win money!"}'</tspan></text>
+  <!-- Response 2 -->
+  <rect x="56" y="288" width="720" height="36" rx="6" fill="#222"/>
+  <text x="70" y="304" class="mono" font-size="12" fill="#aaa">{ <tspan fill="#79d5b3">"prediction"</tspan><tspan fill="#aaa">: </tspan><tspan fill="#f9c74f">"spam"</tspan><tspan fill="#aaa">,  </tspan><tspan fill="#79d5b3">"confidence"</tspan><tspan fill="#aaa">: </tspan><tspan fill="#98d5a3">0.9226</tspan><tspan fill="#aaa">,  </tspan><tspan fill="#79d5b3">"is_spam"</tspan><tspan fill="#aaa">: </tspan><tspan fill="#6ab0f5">true</tspan><tspan fill="#aaa"> }</tspan></text>
+
+  <!-- ── Section divider: After retraining ── -->
+  <rect x="44" y="344" width="3" height="120" fill="#444"/>
+  <text x="56" y="360" class="sans" font-size="11" fill="#28c840">After retraining — model v2 (SMS + Enron combined)</text>
+  <text x="56" y="380" class="mono" font-size="12" fill="#888">youssefabdelrazik@YT-2 ~ %</text>
+  <text x="56" y="398" class="mono" font-size="12" fill="#7ec8e3">curl -X POST https://XXXXXXXXX.execute-api.us-east-1.amazonaws.com/dev/predict \</text>
+  <text x="72" y="414" class="mono" font-size="12" fill="#7ec8e3">-H <tspan fill="#f9c74f">'Content-Type: application/json'</tspan> \</text>
+  <text x="72" y="430" class="mono" font-size="12" fill="#7ec8e3">-d <tspan fill="#f9c74f">'{"text": "Free prize click now win money!"}'</tspan></text>
+  <!-- Response 3 -->
+  <rect x="56" y="438" width="720" height="36" rx="6" fill="#222"/>
+  <text x="70" y="454" class="mono" font-size="12" fill="#aaa">{ <tspan fill="#79d5b3">"prediction"</tspan><tspan fill="#aaa">: </tspan><tspan fill="#f9c74f">"spam"</tspan><tspan fill="#aaa">,  </tspan><tspan fill="#79d5b3">"confidence"</tspan><tspan fill="#aaa">: </tspan><tspan fill="#98d5a3">0.9753</tspan><tspan fill="#aaa">,  </tspan><tspan fill="#79d5b3">"is_spam"</tspan><tspan fill="#aaa">: </tspan><tspan fill="#6ab0f5">true</tspan><tspan fill="#aaa"> }</tspan></text>
+
+  <!-- ── Request 4: Ham with Free ── -->
+  <text x="44" y="500" class="mono" font-size="12" fill="#888">youssefabdelrazik@YT-2 ~ %</text>
+  <text x="44" y="518" class="mono" font-size="12" fill="#7ec8e3">curl -X POST https://XXXXXXXXX.execute-api.us-east-1.amazonaws.com/dev/predict \</text>
+  <text x="60" y="534" class="mono" font-size="12" fill="#7ec8e3">-H <tspan fill="#f9c74f">'Content-Type: application/json'</tspan> \</text>
+  <text x="60" y="550" class="mono" font-size="12" fill="#7ec8e3">-d <tspan fill="#f9c74f">'{"text": "Free Hello can we meet today"}'</tspan></text>
+  <!-- Response 4 -->
+  <rect x="44" y="558" width="732" height="36" rx="6" fill="#222"/>
+  <text x="58" y="574" class="mono" font-size="12" fill="#aaa">{ <tspan fill="#79d5b3">"prediction"</tspan><tspan fill="#aaa">: </tspan><tspan fill="#f9c74f">"ham"</tspan><tspan fill="#aaa">,  </tspan><tspan fill="#79d5b3">"confidence"</tspan><tspan fill="#aaa">: </tspan><tspan fill="#98d5a3">0.7527</tspan><tspan fill="#aaa">,  </tspan><tspan fill="#79d5b3">"is_spam"</tspan><tspan fill="#aaa">: </tspan><tspan fill="#6ab0f5">false</tspan><tspan fill="#aaa"> }</tspan></text>
+
+  <!-- Cursor -->
+  <text x="44" y="630" class="mono" font-size="12" fill="#555">youssefabdelrazik@YT-2 ~ %</text>
+  <rect x="246" y="618" width="8" height="14" fill="#555"/>
+</svg>

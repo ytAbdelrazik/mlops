@@ -133,3 +133,6 @@ $0 — built entirely within AWS Free Tier limits.
 ## Architecture
 
 ![MLOps Architecture](mlops_architecture_final_v2.svg)
+
+
+![API Demo](terminal_demo.svg)
